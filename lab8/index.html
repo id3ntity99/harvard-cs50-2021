@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <title>Trivia!</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <h2>Part 1: Multiple Choice</h2>
+        <div class="result"></div>
+        <hr />
+        <h3>What's the capital of Azerbaijan?</h3>
+        <div class="choices">
+          <button>Saint John's</button>
+          <button>Yerevan</button>
+          <button>Baku</button>
+          <button>Nassau</button>
+          <button>Manama</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Part 2: Free Response</h2>
+        <hr />
+        <h3>
+          What number do you get when you multiply all of the numbers on a
+          telephone’s number pad?
+        </h3>
+        <!-- TODO: Add free response question here -->
+        <input type="text" />
+        <button id="second-btn">Check answer</button>
+        <div class="free-answer"></div>
+      </div>
+    </div>
+
+    <script>
+      const choiceBtns = document.querySelectorAll(".choices button");
+      const result = document.querySelector(".result");
+      const input = document.querySelector("input");
+      const secondBtn = document.querySelector("#second-btn");
+      const freeResult = document.querySelector(".free-answer");
+
+      // Part 1. Multiple Choice.
+      function paintBtns() {
+        choiceBtns.forEach((btn) => {
+          if (btn.innerText !== "Baku") {
+            btn.classList.add("incorrect");
+          }
+          btn.disabled = true;
+        });
+      }
+
+      // If user select incorrect answer:
+      function incorrect(btn) {
+        result.innerHTML = "Incorrect! Try Again!!";
+        btn.classList.add("incorrect");
+        btn.disabled = "true";
+      }
+
+      // If user select correct answer:
+      function correct(e, btn) {
+        result.innerHTML = "Correct!";
+        btn.classList.add("correct");
+        // Disable and paint the buttons that are left.
+        paintBtns();
+      }
+
+      // Check wether it is a correct answer.
+      function isCorrect(e, btn) {
+        if (e.target.innerText === "Baku") {
+          correct(e, btn);
+        } else {
+          incorrect(btn);
+        }
+      }
+
+      // Add event listener to choiceBtns.
+      choiceBtns.forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+          isCorrect(event, btn);
+        });
+      });
+
+      secondBtn.addEventListener("click", () => {
+        if (input.value === "0") {
+          input.classList.add("correct");
+          freeResult.innerHTML = "Correct!";
+        } else {
+          input.classList.add("incorrect");
+          freeResult.innerHTML = "Incorrect! Try Again!!";
+        }
+      });
+    </script>
+  </body>
+</html>

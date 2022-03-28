@@ -1,0 +1,25 @@
+sort1 uses: Bubble.
+
+How do you know?: It takes 15.440 seconds to sort reveresed 50000 numbers with sort1.
+It is the longest time and Big O notaion of bubble is O(n^2), and also bubble sort takes the longest time among
+Selection, Bubble, and Merge sort.
+In that way, sort 1 is Bubble sort.
+Also, it takes 14.296 seconds when we sort sorted50000.txt, which is shorter time than 15.440s.
+Omega notaion of Bubble sort is Omega(n).
+
+
+sort2 uses: Merge
+
+How do you know?: It takes 3.356 seconds to sort reversed 50000 numbers with sort 2.
+It is the shortest time and Big O notaion of merge sort is O(n log n), so the merge sort is fastest algorithm for sorting.
+As conclusion, sort2 uses Merge sort algorithm.
+Also, when we sort sorted50000.txt with sort2, it takes about 3.985 seconds, which is close to 3.356 seconds.
+Omega notation of Merge sort is same as Big O notaion of it.
+
+sort3 uses: Selection.
+
+How do you know?: It takes 12.728s to sort reversed 50000 numbers with sort 3.
+Big O notaion of Selection sort is same as bubble, O(n^2), but it takes fewer times to sort whole number than bubble sort.
+So, sort3 uses Selection Sort.
+And when we sort sorted50000.txt with sort3, it takes 12 seconds, which is close to 12.728 seconds.
+Omega notation of Selection sort is same as Big O notaion of it.

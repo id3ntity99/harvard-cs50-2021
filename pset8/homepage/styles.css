@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Yaldevi:wght@200&display=swap");
+
+body {
+  height: 100%;
+}
+
+header {
+  background-color: #a393eb;
+  height: 100px;
+}
+
+nav {
+  position: relative;
+  z-index: 1;
+}
+.nav {
+  background-color: transparent;
+  height: 100px;
+  padding: 10px 10px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  font-size: 30px;
+  font-weight: 500;
+  color: white;
+}
+
+.nav-link:hover {
+  border-bottom: 2px solid white;
+  color: white;
+}
+
+.diagonal-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 800px;
+  width: 100%;
+  background-image: -webkit-linear-gradient(#a393eb, #a393eb);
+  color: white;
+  transform: skewY(5deg);
+  position: relative;
+  top: -85px;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.brief-intro {
+  position: absolute;
+  top: 50;
+  left: 50;
+  transform: skewY(-5deg);
+}
+
+.btn {
+  position: absolute;
+  left: 0;
+  bottom: 5;
+}
+
+.brief-intro p {
+  font-size: 19px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+  background-image: -webkit-linear-gradient(#f7fafc, #f7fafc);
+  transform: skewY(5deg);
+  background-color: #caced1;
+  padding: 100px 30px;
+  position: relative;
+  top: -90px;
+}
+
+.background-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  height: 100%;
+  width: 100%;
+  transform: skewY(-5deg);
+}
+
+.background-text h1 {
+  font-size: 400px;
+}
+
+/*Add this class when user hit the scroll position of the text.*/
+.gradient {
+  background-image: linear-gradient(
+    to right,
+    #feac5e,
+    #c779d0,
+    #4bc0c8,
+    #64f38c
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 300%;
+  background-position: -100%;
+  transition: 500ms;
+  animation: animatedText 5s alternate-reverse infinite;
+}
+@keyframes animatedText {
+  to {
+    background-position: 100%;
+  }
+}
+
+.content-title {
+  transform: skewY(-5deg);
+}
+
+.value {
+  width: 1480px;
+  height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 20px;
+  transform: skewY(-5deg);
+}
+
+.texts span {
+  font-size: 44px;
+  font-weight: 500;
+}
+
+.value-img {
+  width: 800px;
+  height: 500px;
+  object-fit: cover;
+  transition: 300ms linear;
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 32px 28px -10px;
+}

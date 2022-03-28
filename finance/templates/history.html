@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title%}
+    History
+{% endblock %}
+
+{% block main %}
+<div class="container">
+        <table class="table">
+            <tr>
+                <th>Stock Symbol</th>
+                <th>Qty. of Shares</th>
+                <th>Share Price</th>
+                <th>Total</th>
+                <th>Date</th>
+                <th>State</th>
+            </tr>
+            {% for history in histories %}
+                <tr>
+                    <td>{{ history['stock'].upper() }}</td>
+                    <td>{{ history['quantity'] }}</td>
+                    <td>{{ history['price'] }}</td>
+                    <td>{{ history['price'] * history['quantity'] }}</td>
+                    <td>{{ history['date'] }}</td>
+                    <td>{{ history['state'].upper() }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <script src="{{url_for('static', filename='button.js')}}"></script>
+
+
+{% endblock %}
